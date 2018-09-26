@@ -6,7 +6,7 @@ SLIDE 1. INTRODUCTION
 
 SLIDE 2. DESCRIPTION ABOUT PROJECT (PROBELM)
 	
-	Planning travel is hard. Sometimes we have a place in mind but don't know the right time to visit it. Sometimes we know when we have to plan a holiday but no proper destination in mind. How do we solve this problem ? How do we know a best vacation destination and perfect time to visit it? 
+Planning travel is hard. Sometimes we have a place in mind but don't know the right time to visit it. Sometimes we know when we have to plan a holiday but no proper destination in mind. How do we solve this problem ? How do we know a best vacation destination and perfect time to visit it? 
 	
 SLIDE 3. DESCRIPTION ABOUT PROJECT (SOLUTION)
 	
