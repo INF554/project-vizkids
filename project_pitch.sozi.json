@@ -98,6 +98,50 @@
       }
     },
     {
+      "frameId": "frame8136",
+      "title": "solution",
+      "timeoutMs": 20000,
+      "timeoutEnable": true,
+      "transitionDurationMs": 1000,
+      "showInFrameList": true,
+      "showFrameNumber": true,
+      "layerProperties": {
+        "__sozi_auto__": {
+          "link": false,
+          "referenceElementId": "image3927",
+          "outlineElementId": "image3927",
+          "outlineElementAuto": true,
+          "transitionTimingFunction": "linear",
+          "transitionRelativeZoom": 0,
+          "transitionPathId": ""
+        }
+      },
+      "cameraStates": {
+        "__sozi_auto__": {
+          "cx": 1082.6704835248115,
+          "cy": 679.420230094598,
+          "width": 378.6487863935243,
+          "height": 283.98658979514323,
+          "opacity": 1,
+          "angle": -89.06384589632334,
+          "clipped": true,
+          "clipXOffset": 0,
+          "clipYOffset": 0,
+          "clipWidthFactor": 0.9999999999999998,
+          "clipHeightFactor": 0.9999999999999999
+        }
+      },
+      "cameraOffsets": {
+        "__sozi_auto__": {
+          "deltaX": 3.617260868561516,
+          "deltaY": -4.138302620245781,
+          "widthFactor": 1.6023497090561067,
+          "heightFactor": 0.9952985914636028,
+          "deltaAngle": 0.9361541036766567
+        }
+      }
+    },
+    {
       "frameId": "frame1661",
       "title": "when",
       "timeoutMs": 20000,
@@ -120,8 +164,8 @@
         "__sozi_auto__": {
           "cx": 1415.5174475567653,
           "cy": 471.58536198180474,
-          "width": 269.0986231663063,
-          "height": 201.82396737472973,
+          "width": 269.09862316630637,
+          "height": 201.82396737472976,
           "opacity": 1,
           "angle": 91.10220132150243,
           "clipped": true,
@@ -135,8 +179,8 @@
         "__sozi_auto__": {
           "deltaX": 3.500968064577819,
           "deltaY": 0.39224674742973775,
-          "widthFactor": 1.0251416482557842,
-          "heightFactor": 0.9674770893616036,
+          "widthFactor": 1.0251416482557845,
+          "heightFactor": 0.9674770893616037,
           "deltaAngle": 0.06757635695970521
         }
       }
@@ -208,8 +252,8 @@
         "__sozi_auto__": {
           "cx": 1766.4340579480263,
           "cy": 242.32680909556342,
-          "width": 296.68123204085344,
-          "height": 222.5109240306401,
+          "width": 296.6812320408535,
+          "height": 222.51092403064013,
           "opacity": 1,
           "angle": -0.05672007067423124,
           "clipped": true,
@@ -228,11 +272,55 @@
           "deltaAngle": -0.05672007067423124
         }
       }
+    },
+    {
+      "frameId": "frame9330",
+      "title": "technologies",
+      "timeoutMs": 20000,
+      "timeoutEnable": true,
+      "transitionDurationMs": 1000,
+      "showInFrameList": true,
+      "showFrameNumber": true,
+      "layerProperties": {
+        "__sozi_auto__": {
+          "link": false,
+          "referenceElementId": "image3940",
+          "outlineElementId": "image3940",
+          "outlineElementAuto": true,
+          "transitionTimingFunction": "linear",
+          "transitionRelativeZoom": 0,
+          "transitionPathId": ""
+        }
+      },
+      "cameraStates": {
+        "__sozi_auto__": {
+          "cx": 472.37892173378873,
+          "cy": 115.15373362837481,
+          "width": 244.08038382431582,
+          "height": 183.06028786823688,
+          "opacity": 1,
+          "angle": -0.05672007067423124,
+          "clipped": true,
+          "clipXOffset": 0,
+          "clipYOffset": 0,
+          "clipWidthFactor": 0.9999999999999971,
+          "clipHeightFactor": 0.9999999999999968
+        }
+      },
+      "cameraOffsets": {
+        "__sozi_auto__": {
+          "deltaX": 0.9588167533199794,
+          "deltaY": -7.297194106000191,
+          "widthFactor": 0.918202626748423,
+          "heightFactor": 0.9147836491271895,
+          "deltaAngle": -0.05672007067423124
+        }
+      }
     }
   ],
   "elementsToHide": [],
   "selectedFrames": [
-    "frame5598"
+    "frame9330"
   ],
   "selectedLayers": [
     "__sozi_auto__"
