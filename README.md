@@ -52,10 +52,10 @@ At the end of this project we will have fully functional web application for tra
 
 For our web architecture we are using React frontend with Node.js backend. We might change this to Django backend.
 Flow will be like:
-	1. Client sending request to get some JSX template page
-	2. Node.js/Django server getting main file containing JSX code.
-	3. Rendering it to plain HTML code.
-	4. Sending HTML response to client.
+1. Client sending request to get some JSX template page
+2. Node.js/Django server getting main file containing JSX code.
+3. Rendering it to plain HTML code.
+4. Sending HTML response to client.
 
 ## SLIDE 14. TIMELINE
 
