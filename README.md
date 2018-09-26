@@ -30,11 +30,11 @@ We take insights from our data analysis. As we can see in image we observe Top 2
 	
 ## SLIDE 8. COMPARISON WITH OTHERS
 
-	Everyone is interested in analysing air traffic for investigating best flight routes, reducing air traffic congestion. Air traffic is never analysed in suggesting the most visited destination and the best time to visit it. We analyse these trends in our project unlike others.
+Everyone is interested in analysing air traffic for investigating best flight routes, reducing air traffic congestion. Air traffic is never analysed in suggesting the most visited destination and the best time to visit it. We analyse these trends in our project unlike others.
 	
 ## SLIDE 9. AUDIENCE 
 
-	Our audience is anyone who wants to travel or is planning on to travel with no destination in mind or someone wishing to save bucks on airfare. Anyone that is interested in travelling, young professionals, business owners, teachers, students, etc.
+Our audience is anyone who wants to travel or is planning on to travel with no destination in mind or someone wishing to save bucks on airfare. Anyone that is interested in travelling, young professionals, business owners, teachers, students, etc.
 
 ## SLIDE 10. USER INTERACTION 
 
