@@ -1,7 +1,5 @@
 # INF 554 Assignment for 5
 
-# INF 554 Assignment for 5
-
 SLIDE 1. INTRODUCTION
 
 	Introducing ourselves
