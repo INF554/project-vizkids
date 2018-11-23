@@ -11,7 +11,6 @@ import { values, max } from 'd3';
 export class LinechartComponent implements OnInit {
   constructor() { }
   ngOnInit() {
-    // var div = d3.select("#tooltip")
     let name=[]  
     var value = (<HTMLSelectElement>document.getElementById("DEST")).selectedOptions;
     for (var i=0; i < value.length; i++){
@@ -288,7 +287,8 @@ export class LinechartComponent implements OnInit {
                     .text(d["DEST_COUNTRY_NAME"])
                     .attr("text-anchor", "middle")
                     .attr("x", (width-margin)/2)
-                    .attr("y", 15);
+                    .attr("font-size","20px")
+                    .attr("y", 100);
                 })
               .on("mouseout", function(d) {
                   svg.select(".title-text").remove();
