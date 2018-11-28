@@ -43,25 +43,72 @@ export class LinechartComponent implements OnInit {
     d3.json("./assets/airtravel1.json").then(function(data:any){ 
       // deal data
       // var databack=data.sort(function(a,b){return d3.descending(a.allPassengers,b.allPassengers);});
+
+      var top10=["Mexico","Canada","United Kingdom","Germany","Japan","China","France","Dominican Republic","South Korea","Netherlands"]
+      var top10country=[]
+
+      for(var i=0;i<data.length;++i){
+        if(top10.includes(data[i]["DEST_COUNTRY_NAME"])){
+            top10country.push(data[i])
+        }
+      }
+      var c=0
+      for(var j=0;j<top10country.length;++j)
+           {
+             for(var i=0;i<12;++i)
+             {
+               if(c<top10country[j].subset[i]["allPassengers"])
+               {
+                 c=top10country[j].subset[i]["allPassengers"];
+               }
+             }
+           } 
       var xscale = d3.scalePoint()
-                      .domain(data[6].subset.map(function(d:any){return d.MONTH}))
+                      .domain(top10country[6].subset.map(function(d:any){return d.MONTH}))
                       .range([0,width-(4*margin)]);
-      var yscale=d3.scaleLinear().domain([0, 10000]).range([height-(2*margin),0]);
+      var xscale1 = d3.scalePoint()
+                      .domain(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"])
+                      .range([0,width-(4*margin)]);
+      var yscale=d3.scaleLinear().domain([0, c]).range([height-(2*margin),0]);
      
 
       var axis_l = d3.axisLeft(yscale);  //left ticks
-      var axis_b = d3.axisBottom(xscale);  //bottom ticks
+      var axis_b = d3.axisBottom(xscale1);  //bottom ticks
       g.append("g")
         .attr("class","xaxil")
         .call(axis_l);
       g.append("g")
         .attr("transform","translate(0,"+(height-(2*margin))+")")
         .call(axis_b);
+      svg.append("text")
+        .attr('class','month')
+        .attr("x", 400)
+        .attr("y",450)
+        .attr("font-size", "20px")
+        .attr("fill", "black")
+        .text("month");
+      svg.append("text")
+        .attr('class','passengers')
+        .attr("x", -300)
+        .attr("y", 10)
+        .attr("dy", ".75em")
+        .attr("font-size", "20px")
+        .attr("fill", "black")
+        .attr("transform", "rotate(-90)")
+        .text("passengers");
+      svg.append("text")
+        .attr('class','title1')
+        .attr("x", 350)
+        .attr("y", 50)
+        .attr("font-size", "20px")
+        .attr("fill", "black")
+        .text("Top 10 popular countries")
+      
 
   //legend
-  var labelScale = d3.scalePoint().domain(data.slice(10,20).map(function(d){return d.DEST_COUNTRY_NAME})).range([100,250])
+  var labelScale = d3.scalePoint().domain(top10country.map(function(d){return d.DEST_COUNTRY_NAME})).range([100,250])
     labels.selectAll("text")
-				.data(data.slice(10,20))
+				.data(top10country)
 				.enter()
         .append("text")
 				.text(function(d:any) {return d.DEST_COUNTRY_NAME})
@@ -72,7 +119,7 @@ export class LinechartComponent implements OnInit {
         
     var circle=g.append("g").attr("class","legendcircle")
         .selectAll("circle")
-        .data(data.slice(10,20))
+        .data(top10country)
         .enter()
         .append("circle")
         .attr("cx","620")
@@ -81,7 +128,7 @@ export class LinechartComponent implements OnInit {
         .attr("r","3")
         //@ts-ignore
   // transition
-        function transition(path) {
+      function transition(path) {
           path.transition()
               .duration(2000)
               .attrTween("stroke-dasharray", tweenDash);
@@ -96,7 +143,7 @@ export class LinechartComponent implements OnInit {
                     .x(function(d:any) {return xscale((d.MONTH))})
                     .y(function(d:any){return yscale(+d.allPassengers)})
         g.selectAll('.line-group')
-                    .data(data.slice(10,20))
+                    .data(top10country)
                     .enter()
                     .append('g')
                     .attr('class', 'line-group')
@@ -143,7 +190,7 @@ export class LinechartComponent implements OnInit {
                       });
 //circle
                     g.selectAll("circle-group")
-                      .data(data.slice(10,20)).enter()
+                      .data(top10country).enter()
                       .append("g")
                       .style("fill", (d, i) => c10[i])
                       .selectAll("circle")
@@ -216,27 +263,48 @@ export class LinechartComponent implements OnInit {
                     var option = value[i];
                     name.push(option.value)
                   }
-              var selecteddata = []
+              var selecteddata1 = []
               for(var i=0;i<data.length;++i){
                     if(name.includes(data[i]["DEST_COUNTRY_NAME"])){
-                      selecteddata.push(data[i])
+                      selecteddata1.push(data[i])
                     }
                   }
-            var b=0
-             for(var j=0;j<selecteddata.length;++j)
+              if(selecteddata1.length>0)
                   {
-                    for(var i=0;i<12;++i)
-                    {
-                      if(b<selecteddata[j].subset[i]["allPassengers"])
-                      {
-                        b=selecteddata[j].subset[i]["allPassengers"];
-                      }
-                    }
-                  } 
-                 updataline(selecteddata,b) ;
+                    var b=0
+                    for(var j=0;j<selecteddata1.length;++j)
+                         {
+                           for(var i=0;i<12;++i)
+                           {
+                             if(b<selecteddata1[j].subset[i]["allPassengers"])
+                             {
+                               b=selecteddata1[j].subset[i]["allPassengers"];
+                             }
+                           }
+                         } 
+                      var tit="Preference countries"
+                       updataline(selecteddata1,b,tit) ;                 
+                   }
+                else{
+                  var tit="Top 10 popular countries"
+                  updataline(top10country,c,tit) 
+                }
+
+            
  
                      });
-          function updataline(selecteddata,b) {
+    function updataline(selecteddata,b,tit) { 
+
+      svg.select('.title1')
+          .transition()
+          .duration(1000)
+          .style("opacity", 0)
+          .transition()
+          .style("opacity", 1)
+          .text(tit)
+
+        
+
             var xscale1 = d3.scalePoint()
             .domain(selecteddata[0].subset.map(function(d:any){return d.MONTH}))
             .range([0,width-(4*margin)]);
@@ -275,7 +343,8 @@ export class LinechartComponent implements OnInit {
             .y(function(d:any){return yscale1(+d.allPassengers)})
           g.selectAll(".line-group").remove()
           g.selectAll(".circle").remove()
-                g.selectAll('.line-group')
+          
+              g.selectAll('.line-group')
                 .data(selecteddata)
                 .enter()
                 .append('g')
