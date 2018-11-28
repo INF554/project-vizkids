@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from "d3";
-import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { FormControl } from '@angular/forms';
 import { values, max } from 'd3';
 @Component({
