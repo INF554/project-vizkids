@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from "d3";
-// import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { FormControl } from '@angular/forms';
 import { values, max } from 'd3';
 @Component({
@@ -256,7 +256,7 @@ export class LinechartComponent implements OnInit {
 
 
           // update
-          d3.select('#button1').on("click", function () {
+          d3.select('#DEST').on("change", function () {
               let name=[]  
               var value = (<HTMLSelectElement>document.getElementById("DEST")).selectedOptions;
                   for (var i=0; i < value.length; i++){

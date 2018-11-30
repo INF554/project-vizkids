@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LinechartComponent } from './linechart/linechart.component';
 import { BubblechartComponent } from './bubblechart/bubblechart.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { BubblechartComponent } from './bubblechart/bubblechart.component';
     BubblechartComponent
   ],
   imports: [
+    NgMultiSelectDropDownModule.forRoot(),
     BrowserModule,
     AppRoutingModule
   ],

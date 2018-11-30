@@ -10,6 +10,7 @@ export class BubblechartComponent implements OnInit {
   ngOnInit() {
     var tooltip = d3.select("body")
     .append("div")
+    .attr("class","tooltip1")
     .style("position", "absolute")
     .style("z-index", "10")
     .style("visibility", "hidden")
@@ -26,14 +27,7 @@ export class BubblechartComponent implements OnInit {
                     .attr('width',width)
                     .append('g')
                     .attr("transform", "translate(50,50)");
-      d3.json("./assets/output_file_out.json").then(function(data:any) {
-        
-        // var color = d3.scaleOrdinal(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
-        // console.log(data)  
-        // var data=data[5]
-        // var c = d3.scaleLinear()
-        //         .domain([0, 1])
-        //         .range(['rgb(255, 245, 235)', 'rgb(127, 39, 4)']);
+      d3.json("./assets/output_file_out.json").then(function(data:any) {        
        var color= d3.scaleSequential(d3.interpolateOranges)
         let view
         var pack = data => d3.pack()
@@ -64,9 +58,11 @@ export class BubblechartComponent implements OnInit {
                   .on("mousemove", function() {
                     return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
                   })
-                .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
-                  .on("mouseout", function() { d3.select(this).attr("stroke", null); })
-                  // .on("click", function(d:any){return  focus !== d && (zoom(d), d3.event.stopPropagation())});
+                .on("mouseout", function(){
+                  tooltip.style("visibility", "hidden")
+                          d3.select(this).attr("stroke", null);
+                          d3.select(this).selectAll("tooltip1").style("cursor", "none").remove();
+              })
 
             const label = svg.append("g")
                   .style("font", "10px sans-serif")
@@ -78,43 +74,8 @@ export class BubblechartComponent implements OnInit {
                   .style("fill-opacity", d => d.parent === root ? 1 : 0)
                   .style("display", d => d.parent === root ? "inline" : "none")
                   .text(function(d:any) { return d.data.DEST_COUNTRY_NAME})
-                  .attr("transform", d => `translate(${d.x + 1},${d.y + 1})`);
-
-            //  zoomTo([root.x, root.y, root.r * 2]);
-
-            // function zoomTo(v) {
-            //         const k = width / v[2];
-                
-            //         view = v;
-                
-            //         label.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-            //         node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-            //         node.attr("r", d => d.r * k);
-        
-
-             
-            //     }
-            //     function zoom(d) {
-            //             const focus0 = focus;
-                    
-            //             focus = d;
-                    
-            //             const transition = svg.transition()
-            //                 .duration(d3.event.altKey ? 7500 : 750)
-            //                 .tween("zoom", d => {
-            //                   const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
-            //                   return t => zoomTo(i(t));
-            //                 });
-                    
-            //             label
-            //                 .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
-            //                 .transition(transition)
-            //                   .style("fill-opacity", d => d.parent === focus ? 1 : 0)
-            //                   .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
-            //                   .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
-            //           }
- 
-                  })
+                  .attr("transform", d => `translate(${d.x + 1},${d.y + 1})`)
+               })
 
 
 
