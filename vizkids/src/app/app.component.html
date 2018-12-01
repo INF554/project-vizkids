@@ -1,34 +1,68 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <div style="text-align:center"> -->
-<router-outlet></router-outlet>
-<!-- <div id="content" class="row-fluid">
-    <div class="col-md-9">
-        <app-linechart></app-linechart>
-    </div>
-    <div class="col-md-3">
-        <app-bubblechart></app-bubblechart>
-    </div>
-</div> -->
-<div class="container">
-    <div class="row align-items-start">
-      <div class="col">
-        <app-linechart></app-linechart>
+<div id="content">
+    <div class="row">
+        <div class="col-sm">
+            <nav id="navbar-example2" class="navbar navbar-dark bg-dark fixed-top ">
+                <a class="navbar-brand" href="#">Travelcation</a>
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#overview">Overview</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#where">Destination</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#when">Time</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#airline">Airlines</a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
       </div>
-    </div>
-    <!-- <div class="row align-items-center">
-      <div class="col">
-        One of three columns
+
+
+      <div class="row">
+        <div class="col-sm">
+            <div id="home">
+                <app-home></app-home>
+            </div>
+        </div>
       </div>
-      <div class="col">
-        One of three columns
+
+      <div class="row">
+          <div class="col-sm">
+              <div id="overview">
+                  <app-bubblechart></app-bubblechart>
+              </div>
+          </div>
       </div>
-      <div class="col">
-        One of three columns
+
+      <!-- <div class="row">
+          <div class="col-sm">
+              <div id="where">
+                  <app-mapchart></app-mapchart>
+              </div>
+          </div>
+      </div> -->
+
+      <div class="row">
+          <div class="col-sm">
+              <div id="when">
+                  <app-linechart></app-linechart>
+              </div>
+          </div>
       </div>
-    </div> -->
-    <div class="row align-items-end">
-      <div class="col">
-        <app-bubblechart></app-bubblechart>
+
+      <div class="row">
+          <div class="col-sm">
+              <div id="when">
+                  <app-airlines></app-airlines>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
+
+</div>
