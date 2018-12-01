@@ -190,8 +190,7 @@ export class MapchartComponent implements OnInit {
       arc.append("path")
         .attr("d",path)
         .attr("stroke","white")
-        .attr("fill",function(d:any){return colorScale((d.data.allPASSENGERS))})
-        .attr("id", function(d:any){return "arc"+d.data.DEST_CITY_NAME.substr(0,3)});
+        .attr("fill",function(d:any){return colorScale((d.data.allPASSENGERS))});
      
 
       arc.append("text")

@@ -52,7 +52,7 @@ export class BubblechartComponent implements OnInit {
                   .attr("data-placement","top")
                   .on("mouseover", function(d:any) { 
                     d3.select(this).attr("stroke", "#000"); 
-                    tooltip.text("City: "+d.data.DEST_CITY_NAME.substr(0,d.data.DEST_CITY_NAME.indexOf(','))+": "+d.data.allPASSENGERS);
+                    tooltip.text("City: "+d.data.DEST_CITY_NAME+": "+d.data.allPASSENGERS);
                     tooltip.style("visibility", "visible");
                   })
                   .on("mousemove", function() {
