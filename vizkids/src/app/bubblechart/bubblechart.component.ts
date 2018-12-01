@@ -28,7 +28,7 @@ export class BubblechartComponent implements OnInit {
                     .append('g')
                     .attr("transform", "translate(50,50)");
       d3.json("./assets/output_file_out.json").then(function(data:any) {        
-       var color= d3.scaleSequential(d3.interpolateOranges)
+       var color= d3.scaleSequential(d3.interpolateBlues)
         let view
         var pack = data => d3.pack()
                 .size([width - 2, height - 2])
@@ -52,7 +52,7 @@ export class BubblechartComponent implements OnInit {
                   .attr("data-placement","top")
                   .on("mouseover", function(d:any) { 
                     d3.select(this).attr("stroke", "#000"); 
-                    tooltip.text(d.data.DEST_CITY_NAME+" "+d.data.allPASSENGERS);
+                    tooltip.text("City: "+d.data.DEST_CITY_NAME.substr(0,d.data.DEST_CITY_NAME.indexOf(','))+": "+d.data.allPASSENGERS);
                     tooltip.style("visibility", "visible");
                   })
                   .on("mousemove", function() {

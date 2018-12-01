@@ -1,15 +1,33 @@
-<div class="form-group">
-<label class="col-lg-1 control-label">DESTINATION</label>
-<div class="col-lg-6">
-  <select id="DEST" class="selectpicker countrypicker" data-flag="true" multiple>
-      <option value="Belgium">Belgium</option>
-      <!-- <option value="Algeria">Algeria</option> -->
-      <!-- <option value="Angola">Angola</option> -->
+<br/>
+<br/>
+<br/>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+                <h1>Find Best Time</h1>
+                <br/>
+                <p class="text-justify">
+                    This section helps in deciding the best time to visit a particular destination. By default line chart shows the number of passengers to top 10 destination countries from United States over January to December in 2017. User can select a particular destination to find out what is the best time to visit it. User is also given option to select multiple destinations.
+                         <br/>
+                                <br/>
+                </p>
+        </div>
+</div>
+    <div class="row">
+      <div class="col-sm-3">
+            <div class="input-group" style="width:800px; margin:0 auto; font-size:13px;">
+                <div class="col-sm-3">
+                    <label class="input-group-text" for="DEST">Select Destination</label>
+                    
+                        <select id="DEST" class="selectpicker" multiple>
+      
       <option value="Anguilla" >Anguilla</option>
       <option value="Argentina">Argentina</option>
       <option value="Aruba">Aruba</option>
       <option value="Australia">Australia</option>
-      <option value="Belize">Belize</option>
+      <!-- <option value="Belize">Belize</option> -->
       <option value="Brazil">Brazil</option>
       <option value="Bolivia">Bolivia</option>
       <option value="Belgium">Belgium</option>
@@ -48,10 +66,11 @@
   
   </select>
 </div>
-<!-- <button id="buttonline" class="col-lg-1">Click me!</button> -->
-
-<!-- <button id="button1" class="col-lg-1" (click)="onClickMe()">Click me!</button> -->
 </div>
-<div><svg id="linechart"></svg></div>
-<!-- <div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div> -->
-<!-- <button type="button" class="btn btn-primary">Primary</button> -->
+          </div>
+        
+            <div class="col-sm-9"><div><svg id="linechart"></svg></div></div>
+        </div>
+      </div>
+      <br/>
+      <br/>

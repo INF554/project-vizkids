@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LinechartComponent } from './linechart/linechart.component';
+import { MapchartComponent } from './mapchart/mapchart.component';
 import { BubblechartComponent } from './bubblechart/bubblechart.component';
 import { AirlinesComponent } from './airlines/airlines.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,7 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     LinechartComponent,
     BubblechartComponent,
+    MapchartComponent,
     AirlinesComponent,
     HomeComponent
   ],

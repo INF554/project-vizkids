@@ -106,13 +106,6 @@ export class MapchartComponent implements OnInit {
             chart2.select((".") + cCountry)
                 .style("fill", function(d){ return colorScale(cRate<10000 ? 0 : cRate<100000 ? 1 : cRate<500000 ? 3 : cRate<1000000 ? 4 : 6); })
                 .on("mouseover",function(data:any){
-
-
-                    d3.select("#tooltip")
-                        .selectAll("#pie")
-                        .remove();
-                    d3.select('#tooltip')
-	  .classed("hidden",true);
                     var hovered;
                     var hovered_class;
                     for(var j=0;j<main_data.length;++j){
@@ -240,7 +233,7 @@ export class MapchartComponent implements OnInit {
 
 
 
-d3.select('#Source').on("click", function () {
+d3.select('#Source').on("change", function () {
 
     var value = (<HTMLSelectElement>document.getElementById("Source")).value;
     var selecteddata1 = []

@@ -86,7 +86,7 @@ export class LinechartComponent implements OnInit {
         .attr("y",450)
         .attr("font-size", "20px")
         .attr("fill", "black")
-        .text("month");
+        .text("Month of Year");
       svg.append("text")
         .attr('class','passengers')
         .attr("x", -300)
@@ -95,14 +95,14 @@ export class LinechartComponent implements OnInit {
         .attr("font-size", "20px")
         .attr("fill", "black")
         .attr("transform", "rotate(-90)")
-        .text("passengers");
+        .text("# of Passengers");
       svg.append("text")
         .attr('class','title1')
-        .attr("x", 350)
+        .attr("x", 230)
         .attr("y", 50)
         .attr("font-size", "20px")
         .attr("fill", "black")
-        .text("Top 10 popular countries")
+        .text("Showing results for top 10 popular countries")
       
 
   //legend
@@ -282,11 +282,11 @@ export class LinechartComponent implements OnInit {
                              }
                            }
                          } 
-                      var tit="Preference countries"
+                      var tit="Showing results for selected countries"
                        updataline(selecteddata1,b,tit) ;                 
                    }
                 else{
-                  var tit="Top 10 popular countries"
+                  var tit="Showing results for top 10 popular countries"
                   updataline(top10country,c,tit) 
                 }
 

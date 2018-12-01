@@ -13,7 +13,7 @@ export class AirlinesComponent implements OnInit {
 
   ngOnInit() {
     var svg = d3.select("#barChart"),
-    margin = {top: 80, right: 20, bottom: 180, left: 200},
+    margin = {top: 80, right: 20, bottom: 180, left: 100},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -132,29 +132,32 @@ d3.csv("./assets/Rankings.csv").then(function(d) {
        .attr("y", 470)
        .text("Airline")
        .style('fill', 'black')
-       .style('font-size', '20px')
-       .style('font-weight', 'bold');	
+       .style('font-size', '20px');	
 
       g.append("text")
-		.attr("x", -220)
-		.attr("y", -45)
+		.attr("x", -250)
+		.attr("y", -50)
 		.attr("dy", ".75em")
 		.attr("transform", "rotate(-90)")
     .text("Aggregate Rating")
     .style('fill', 'black')
-    .style('font-size', '20px')
-    .style('font-weight', 'bold');
+    .style('font-size', '20px');
 
     svg.append("text")
 	   .attr("id",'tittleText')
-	   .attr("x", 535)
+	   .attr("x", 520)
        .attr("y", 40)
 	   .attr("fill",'black')
        .text("Aggregate Airline Rating")
-       .style("text-decoration", "underline")
-       .style('font-weight', 'bold');
+       .style('font-size', '20px');
 
       d3.select('#alpha').on('click', function() {
+
+        d3.select("#tittleText")
+        .text("Airlines ranked according to their scores");
+
+
+
         var sorted_data=copy_data.sort(function(a,b) {return d3.ascending(a.Airline, b.Airline);})
         console.log(sorted_data)
         var svg = d3.select('#barChart')
